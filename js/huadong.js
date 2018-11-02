@@ -363,3 +363,20 @@ yuanList13.forEach(function(val, index) {
 
 	}
 });
+
+
+		let time8 = setInterval(function() {
+			let nowTime = new Date().getTime();
+			console.log(nowTime)
+			let futureTime = new Date(2018, 11, 4, 8, 0, 0).getTime();
+			console.log(futureTime)
+			let differ = futureTime - nowTime;
+			console.log(differ)
+			let hours = Math.floor(differ / 1000 / 60 / 60);
+			let mins = Math.floor((differ - hours * 60 * 60 * 1000) / 1000 / 60);
+			let seconds = Math.floor((differ - hours * 60 * 60 * 1000 - mins * 60 * 1000) / 1000);
+			console.log(hours, mins, seconds)
+			document.querySelector(" .shi").innerHTML = hours >= 10 ? hours : "0" + hours;
+			document.querySelector(" .fen").innerHTML = mins >= 10 ? mins : "0" + mins;
+			document.querySelector(" .miao").innerHTML = seconds >= 10 ? seconds : "0" + seconds;
+		}, 1000);
